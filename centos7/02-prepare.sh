@@ -21,12 +21,12 @@ sudo sed -i 's/^\(CONFIG_NOVA_NETWORK_PRIVIF\s*=\s*\).*$/\1lo/' ${ANSWER_FILE}
 sudo sed -i 's/^\(CONFIG_NEUTRON_OVS_BRIDGE_MAPPINGS\s*=\s*\).*$/\1extnet1:br-ex/' ${ANSWER_FILE}
 sudo sed -i 's/^\(CONFIG_USE_EPEL\s*=\s*\).*$/\1y/' ${ANSWER_FILE}
 
-# NOTE: ens34 is NAT interface for Linux guest in VMware. Replace ens34 
+# NOTE: ens34 is a NAT interface for Linux guest in VMware. Replace ens34 
 # according to the hypervisor that you are using. For example, default NAT 
-# interface name for a Linux guest in
-# 1. VirtualBox - enp0s3
-# 2. KVM - eth0 
-# 3. VMware - ens34
+# interface name for a Linux guest in a typical setup
+# 1. VirtualBox - enp0s3 for Intel(R) PRO/1000
+# 2. KVM - eth0 for virtio
+# 3. VMware - ens34 for Intel(R) PRO/1000
 sudo sed -i 's/^\(CONFIG_NOVA_NETWORK_PUBIF\s*=\s*\).*$/\1ens34/' ${ANSWER_FILE}
 sudo sed -i 's/^\(CONFIG_NEUTRON_OVS_BRIDGE_IFACES\s*=\s*\).*$/\1br-ex:ens34/' ${ANSWER_FILE}
 
