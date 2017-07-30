@@ -22,8 +22,8 @@ Optionally, the Linux guest is configured with
 1. A host-only-network with a static IP (useful for SSH access from host)
 2. A hostname
 3. Nested virtualisation enabled on the Linux guest from the hypervisor host. 
-  (a) Refer to the 04-configure-nova.sh script for details.
-  (b) https://www.server-world.info/en/note?os=CentOS_7&p=vmware_player&f=3
+  * Refer to the 04-configure-nova.sh script for details.
+  * https://www.server-world.info/en/note?os=CentOS_7&p=vmware_player&f=3
 
 Instructions
 --
