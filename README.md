@@ -28,6 +28,9 @@ Optionally, the Linux guest is configured with
 Instructions
 --
 1. Copy all scripts to the root user's home directory.
-2. Update the network interface on the host to be used for Nova network public 
-interface and Neutron OVS bridge interface. 
+2. Edit the 02-prepare.sh script to update the network interface on the host 
+to be used for Nova network public interface and Neutron OVS bridge interface. 
+To be specific, look for the following two lines in the script:
+* sudo sed -i 's/^\(CONFIG_NOVA_NETWORK_PUBIF\s*=\s*\).*$/\1ens34/' ${ANSWER_FILE}
+* sudo sed -i 's/^\(CONFIG_NEUTRON_OVS_BRIDGE_IFACES\s*=\s*\).*$/\1br-ex:ens34/' ${ANSWER_FILE}
 3. Execute each script one-by-one.
